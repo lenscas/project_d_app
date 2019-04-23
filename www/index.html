@@ -28,7 +28,9 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
+        <!--
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -36,19 +38,31 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script>
+                function go_to(to){
+                    $(".page").hide()
+                    $("#" + to).show()
+                }
+            </script>
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova!</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready!!</p>
+        <div class="container-fluid">
+            <div class="row page" id="load_screen">
+                <div class="col-sm">
+                    <h1>Dit is een laad scherm</h1>
+                </div>
+            </div>
+            <div class="row page" id="test1">
+                <div class="col-sm">
+                    <h1>Alles is klaar</h1>
+                </div>
             </div>
         </div>
+        <script>
+            goto("load_screen")
+        </script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </body>
 </html>
