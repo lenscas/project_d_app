@@ -41,6 +41,10 @@
         <script>
                 function go_to(to){
                     $(".page").hide()
+                    const page = $("#" + to)
+                    if(page.length == 0 ){
+                        console.error("Could not find "+to)
+                    }
                     $("#" + to).show()
                 }
             </script>
@@ -51,6 +55,16 @@
 {{PAGES}}
         </div>
         <script>
+            $("body").on("click",".switch",function(e){
+                    e.preventDefault()
+                    const to = $(this).data("to")
+                    if(to){
+                        go_to($(this).data("to"))
+                    } else {
+                        console.error("no data-to found on tag")
+                    }
+                    
+                })
             go_to("load_screen")
         </script>
         <script type="text/javascript" src="cordova.js"></script>
