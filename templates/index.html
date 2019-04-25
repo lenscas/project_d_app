@@ -39,11 +39,15 @@
         <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script>
+                pageController={}
                 function go_to(to){
                     $(".page").hide()
                     const page = $("#" + to)
                     if(page.length == 0 ){
                         console.error("Could not find "+to)
+                    }
+                    if(pageController[to]) {
+                        pageController[to]()
                     }
                     $("#" + to).show()
                 }
