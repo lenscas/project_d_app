@@ -1,12 +1,42 @@
-<div class = col-sm>
-    <div class = row>
-        <button class = "btn btn-success switch" data-to = "not_yet_implemented">Con</button> <!-- connected -->
-        <button class = "btn btn-success switch" data-to = "not_yet_implemented">Ala</button> <!-- alarms -->
-        <button class = "btn btn-success switch" data-to = "now_doing">Fil</button> <!-- files -->
+<div class = col-sm style="border-top: 1px solid black">
+    <div class = row style="border-bottom: 1px solid black">
+        <div class="col">
+            <button class = "btn btn-light switch" data-to = "not_yet_implemented">
+                <i class="fa fa-network-wired"></i>
+                <p>Connected</p>
+            </button> <!-- connected -->
+        </div>
+        <div class="col">
+            <button class = "btn btn-large btn-light switch" data-to = "not_yet_implemented">
+                <i class="fa fa-bell"></i>
+                <p>Alarm</p>
+            </button> <!-- alarms -->
+        </div>
+        <div class="col">
+            <button class = "btn btn-large btn-light switch" data-to = "now_doing">
+                <i class="fa fa-folder-open"></i>
+                <p>Files</p>
+            </button>
+        </div> <!-- files -->
     </div>
-    <div class = row>
-        <button class = "btn btn-success switch" data-to = "not_yet_implemented">Set</button> <!-- settings -->
-        <button class = "btn btn-success switch" data-to = "not_yet_implemented">Upd</button> <!-- updates -->
-        <button class = "btn btn-success switch" data-to = "not_yet_implemented">Hel</button> <!-- help -->
+    <div class ="row">
+        <div class="col">
+            <button class = "btn btn-light btn-large switch" data-to = "not_yet_implemented">
+                <i class="fa fa-cog"></i>
+                <p>Settings</p>
+            </button> <!-- settings -->
+        </div>
+        <div class="col">
+            <button class = "btn btn-large btn-light switch" data-to = "not_yet_implemented">
+                <i class="fa fa-lightbulb"></i>
+                <p>Light</p>
+            </button> <!-- updates -->    
+        </div>
+        <div class="col">
+            <button class = "btn btn-light btn-large switch" data-to = "not_yet_implemented">
+                <i class="fa fa-question-circle"></i>
+                <p>Help</p>
+            </button> <!-- help -->
+        </div>
     </div>
 </div>
