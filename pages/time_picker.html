@@ -27,6 +27,7 @@
     const timer = $(".timepicker");
     M.Timepicker.init(timer,{
         showClearBtn:true,
+        twelveHour: false,
         i18n:{
             clear: "remove",
             cancel: "cancel",
@@ -34,7 +35,11 @@
         }
     });
     timer.on("change",function(e){
-        console.log(time.M_Timepicker.time);
+        var uur = time.M_Timepicker.hours * 3600000;
+        var minuten = time.M_Timepicker.minutes * 60000;
+        var tijd_milliseconden = uur + minuten;
+        console.log(tijd_milliseconden);
+        
     })
 </script> 
 </body>
