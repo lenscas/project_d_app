@@ -38,6 +38,7 @@
         const now = new Date()
         now.setHours(time.M_Timepicker.hours)
         now.setMinutes(time.M_Timepicker.minutes)
+        API.post("settings/time",{new_time: now.getTime()})
     })
 </script> 
 </body>
