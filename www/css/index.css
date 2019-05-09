@@ -26,3 +26,14 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
 }
+.menu_page {
+    height : 80vh;
+    overflow:auto;
+}
+.menu_container {
+    height: 20vh;
+    margin-bottom: 0 !important;
+}
+.menu_container .row {
+    margin-bottom: 0;
+}
