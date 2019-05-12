@@ -26,3 +26,23 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
 }
+
+.opener {
+    background-color: #66B6F2;
+}
+
+/*Mobile layout*/
+.SSS_logo {
+    margin-top: 75%
+}
+
+/*Desktop layout*/
+.SSS_logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+    background-position: 0%;
+    margin-top: 15%;
+}
