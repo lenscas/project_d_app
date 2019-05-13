@@ -16,7 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+var app = (function(){
+    let done = 0
+    incCount = ()=>{
+        done++
+        if(done===2){
+            go_to("first_screen")
+        }
+    }
+    $(document).ready(function() {
+        setTimeout(incCount, 5000);
+    });
+    return {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -32,9 +43,9 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        go_to("first_screen")
+        incCount()
         console.log('Received Event: ' + id);
     }
 };
-
+})()
 app.initialize();
