@@ -32,7 +32,7 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        go_to("first_screen")
+        go_to("now_doing")
         console.log('Received Event: ' + id);
     }
 };
