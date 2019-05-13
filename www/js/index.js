@@ -44,6 +44,7 @@ var app = (function(){
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         incCount()
+        go_to("now_doing")
         console.log('Received Event: ' + id);
     }
 };
