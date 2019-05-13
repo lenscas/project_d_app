@@ -25,10 +25,20 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
+    margin:0; 
+    padding:0; 
+    height:auto; 
 }
+
+html { 
+    margin:0; 
+    padding:0; 
+    height:auto; 
+  }
 
 .opener {
     background-color: #66B6F2;
+    height: 100%;
 }
 
 /*Mobile layout*/
