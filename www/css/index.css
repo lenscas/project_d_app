@@ -38,13 +38,14 @@ html {
 
 .opener {
     background-color: #66B6F2;
-    height: 100%;
+    height: 100vh;
+    width: 100%;
 }
 
 /*Mobile layout*/
-.SSS_logo {
+/*.SSS_logo {
     margin-top: 75%
-}
+}*/
 
 /*Desktop layout*/
 .SSS_logo {

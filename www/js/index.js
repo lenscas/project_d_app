@@ -25,7 +25,7 @@ var app = (function(){
         }
     }
     $(document).ready(function() {
-        setTimeout(incCount, 50000);
+        setTimeout(incCount, 2000);
     });
     return {
     // Application Constructor
