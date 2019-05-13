@@ -37,10 +37,4 @@ Object.keys(components).forEach(
 	}
 )
 const templateText = fs.readFileSync("./templates/index.html",{encoding:"utf-8"})
-fs.writeFileSync(
-	"www/index.html",
-	templateText.replace(
-		"{{PAGES}}",
-		pageText
-	)
-)
+fs.writeFileSync("www/index.html", templateText.replace("{{PAGES}}",pageText))
