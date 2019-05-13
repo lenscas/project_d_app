@@ -27,7 +27,6 @@
     const timer = $(".timepicker");
     M.Timepicker.init(timer,{
         showClearBtn:true,
-        twelveHour: false,
         i18n:{
             clear: "remove",
             cancel: "cancel",
@@ -35,10 +34,7 @@
         }
     });
     timer.on("change",function(e){
-        const now = new Date()
-        now.setHours(time.M_Timepicker.hours)
-        now.setMinutes(time.M_Timepicker.minutes)
-        API.post("settings/time",{new_time: now.getTime()})
+        console.log(time.M_Timepicker.time);
     })
 </script> 
 </body>

@@ -10,7 +10,7 @@ API = (function(){
 		})
 		return await res.json()
 	}
-	return {
+	return{
 		get(url) {
 			return addMinimal(url)
 		},
@@ -19,6 +19,7 @@ API = (function(){
 				method :"POST",
 				body: JSON.stringify(data)
 			})
+			return res.json()
 		},
 		put(url,data) {
 			return addMinimal(url,{

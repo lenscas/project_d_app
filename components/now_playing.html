@@ -1,26 +1,19 @@
-<div class="row now_playing" style="border-bottom:black 1px solid">
+<div class="row" style="border-bottom:black 1px solid">
 	<div class = col-sm>
 		<h4>Now playing:</h4>
 		<div class = row>
-			<div class="col current_song">
+			<div class="col">
 				<p>Cool song</p>
 			</div>
 			<div class="col-xs-1">
-				<button class="btn btn-small btn-light"><i class="fa fa-backward"></i></button>
+				<button class="btn btn-small btn-light"><<</button>
 			</div>
 			<div class="col-xs-1">
-				<button class="btn btn-small btn-light"><i class="fa fa-play"></i></button>
+				<button class="btn btn-small btn-light">Play</button>
 			</div>
 			<div class="col-xs-1">
-					<button class="btn btn-small btn-light"><i class="fa fa-forward"></i></button>
+					<button class="btn btn-small btn-light">>></button>
 			</div>
 		</div>
 	</div>
 </div>
-<script>
-	async function load_song(){
-		const playlist = await API.get("audio/playlist")
-		$(".now_playing").find(".current_song").html(playlist.currentSong.title || playlist.currentSong.path)
-		console.log(playlist)
-	}
-</script>
