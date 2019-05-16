@@ -25,6 +25,9 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
+    margin:0; 
+    padding:0; 
+    height:auto; 
 }
 .menu_page {
     height : 80vh;
@@ -36,4 +39,27 @@ body {
 }
 .menu_container .row {
     margin-bottom: 0;
+}
+
+.opener {
+    background-color: #66B6F2;
+    height: 100vh;
+    width: 100%;
+}
+
+html { 
+    margin:0; 
+    padding:0; 
+    height:auto; 
+  }
+
+  /*Desktop layout*/
+.SSS_logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+    background-position: 0%;
+    margin-top: 15%;
 }
