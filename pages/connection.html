@@ -9,6 +9,14 @@
     text-align: center;
 }
 
+.main-tekst a {
+    text-decoration: none;
+}
+
+.main-tekst a:hover {
+    color: green;
+}
+
 #sp-btn {
     margin-bottom: 10px;
 }
@@ -27,10 +35,10 @@
     <div class="container">
         <h1 id="cn-h1">Status</h1>
         <div class="main-tekst">
-            <p>Speaker: <span class="sp-s disconnected">Not Connected</span></p>
+            <p><a href="#">Speaker:</a> <span class="sp-s disconnected">Not Connected</span></p>
             <button class="btn btn-primary" id="sp-btn">Connect</button> 
             <br>
-            <p>Light: <span class="lp-s disconnected">Not Connected</span></p>
+            <p><a href="#">Light:</a> <span class="lp-s disconnected">Not Connected</span></p>
             <button class="btn btn-primary" id="lp-btn">Connect</button>
         </div>
     </div>
@@ -67,4 +75,6 @@
         }
     });
 
+    const res = API.get("audio/playlist");
+    console.log(res);
 </script>
