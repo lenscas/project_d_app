@@ -47,10 +47,8 @@
             <button class="btn btn-primary" id="lp-btn">Connect</button>
         </div>
         <div class="res-server">
-        
 
-
-        </div>
+        </div>     
     </div>
 </div>
 <menu/>
@@ -63,7 +61,6 @@
         const path = res.currentSong.path;
         const list_length = res.list.length;
 
-
         $("#sp-btn").on("click", function(){ 
             var text1 = $(".sp-s").text();
             if(text1 == "Not Connected") {
@@ -74,11 +71,10 @@
                 $(".res-server").append("<ul><li>Artist: " + artist + "</li></ul>" );
                 $(".res-server").append("<ul><li>Path: " + path + "</li></ul>" );
 
-                for(i = 0;  i < list_length; i++) {
 
-                    $(".res-server").append("<h2>List of Songs</h2>");
-                    $(".res-server").append("<ul><li>Artist: " + artist + "</li></ul>" );
-                    $(".res-server").append("<ul><li>Path: " + path + "</li></ul>" );
+                for(i = 1;  i <= list_length; i++) {
+                    $(".res-server").append("<h2>Playlist</h2>");
+                    $(".res-server").append("<ul><li>"+ [i] + "." + " Artist: " + artist + " - " + "Path: "+ path +"</li></ul>" );
                 }
 
             } else  {
