@@ -1,12 +1,53 @@
-<script>
-setColorTemperature = (id, temperature) => {
-    let color = "rgb(" + (1-temperature * 255) + ",125," + temperature * 255 + ")"
-    document.getElementById(id).style.color = color
+<style>
+
+.cn-h1 {
+    text-align: center;
 }
-</script>
+
+.main-tekst-lp {
+    text-align: center;
+}
+
+.res-server-lp {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-tekst-lp a {
+    text-decoration: none;
+}
+
+.main-tekst-lp a:hover {
+    color: green;
+}
+
+#sp-btn {
+    margin-bottom: 10px;
+}
+
+.disconnected-lp {
+    color: red;
+}
+
+.connected-lp {
+    color: green;
+}
+
+</style>
+
+</style>
 
 <div class="row menu_page">
-    <div class="col-sm">
+    <div class="container">
+            <h1 class="cn-h1">Status</h1>
+            <div class="main-tekst-lp">
+                <p><a href="#">Light:</a> <span class="lp-s disconnected-lp">Not Connected</span></p>
+                <button class="btn btn-primary" id="lp-btn">Connect</button>
+            </div>
+            <div class="res-server-lp">
+            </div>     
+    </div>
+     <!-- <div class="col-sm">
         <div class="row">
             <p>Light Intensity:</p>
             <p>89%</p>
@@ -24,6 +65,29 @@ setColorTemperature = (id, temperature) => {
             <p>Red Light Filter Phone</p>
             <p>Red Light Filter Laptop</p>
         </div>
-    </div>
+    </div> -->
 </div>
 <menu/>
+
+<script>
+
+    $("#lp-btn").on("click", function(){
+        var text2 = $(".lp-s").text();
+        if(text2 == "Not Connected") {
+            $(".lp-s").text("Connected");
+            $(".lp-s").toggleClass("connected-lp disconnected-lp");
+            $("#lp-btn").text("Disconnect");
+            } else  {
+                $(".lp-s").text("Not Connected");
+                $(".lp-s").toggleClass("connected-lp disconnected-lp");
+                $("#lp-btn").text("Connect");
+            }
+    });
+
+    setColorTemperature = (id, temperature) => {
+        let color = "rgb(" + (1-temperature * 255) + ",125," + temperature * 255 + ")"
+        document.getElementById(id).style.color = color
+    }
+
+
+</script>

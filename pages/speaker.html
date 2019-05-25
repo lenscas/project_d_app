@@ -1,0 +1,86 @@
+
+<style>
+
+.cn-h1 {
+    text-align: center;
+}
+
+.main-tekst-sp {
+    text-align: center;
+}
+
+.res-server-sp {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-tekst-sp a {
+    text-decoration: none;
+}
+
+.main-tekst-sp a:hover {
+    color: green;
+}
+
+#sp-btn {
+    margin-bottom: 10px;
+}
+
+.disconnected-sp {
+    color: red;
+}
+
+.connected-sp {
+    color: green;
+}
+
+</style>
+    
+<div class="row menu_page">
+    <div class="container">
+        <h1 class="cn-h1">Status</h1>
+        <div class="main-tekst-sp">
+            <p><a href="#">Speaker:</a> <span class="sp-s disconnected-sp">Not Connected</span></p>
+            <button class="btn btn-primary" id="sp-btn">Connect</button> 
+        </div>
+        <div class="res-server-sp">
+
+        </div>     
+    </div>
+</div>
+<menu/>
+<script>
+
+    pageController["speaker"] = async function(){
+
+        const res = await API.get("audio/playlist");
+        const artist = res.currentSong.artist;
+        const path = res.currentSong.path;
+        const list_length = res.list.length;
+
+        console.log(res);
+
+        $("#sp-btn").on("click", function() { 
+            var text1 = $(".sp-s").text();
+            if(text1 == "Not Connected") {
+                $(".sp-s").text("Connected");
+                $(".sp-s").toggleClass("connected-sp disconnected-sp");
+                $("#sp-btn").text("Disconnect");
+                $(".res-server-sp").append("<h2>Now playing</h2>");
+                $(".res-server-sp").append("<ul><li>Artist: " + artist + "</li></ul>" );
+                $(".res-server-sp").append("<ul><li>Path: " + path + "</li></ul>" );
+
+                for(i = 1;  i <= list_length; i++) {
+                    $(".res-server-sp").append("<h2>Playlist</h2>");
+                    $(".res-server-sp").append("<ul><li>"+ [i] + "." + " Artist: " + artist + " - " + "Path: "+ path +"</li></ul>" );
+                }
+
+            } else  {
+                $(".sp-s").text("Not Connected");
+                $(".sp-s").toggleClass("connected-sp disconnected-sp");
+                $("#sp-btn").text("Connect");
+                $(".res-server-sp").empty();
+            }
+        });
+    }
+</script>
