@@ -33,7 +33,18 @@
     color: green;
 }
 
-</style>
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+input[type=range] {
+    height: 10px;
+    width: 20%;
+}
 
 </style>
 
@@ -41,31 +52,20 @@
     <div class="container">
             <h1 class="cn-h1">Status</h1>
             <div class="main-tekst-lp">
-                <p><a href="#">Light:</a> <span class="lp-s disconnected-lp">Not Connected</span></p>
+                <p><a href="#">Lights:</a> <span class="lp-s disconnected-lp">Not Connected</span></p>
                 <button class="btn btn-primary" id="lp-btn">Connect</button>
             </div>
-            <div class="res-server-lp">
+            <div class="res-server-lp hide">
+                <h2>Connected lights:</h2>
+                <p><strong>Philips Hue 1</strong></p>
+                <p>Light Intensity: <span id="demo"></span></p>
+                <input type="range" min="0" max="100" value="75" class="slider" id="myRange">
+                <br>
+                <p><strong>Philips Hue 2</strong></p>
+                <p>Light Intensity: <span id="demo2"></span></p>
+                <input type="range" min="0" max="100" value="30" class="slider" id="myRange2">
             </div>     
     </div>
-     <!-- <div class="col-sm">
-        <div class="row">
-            <p>Light Intensity:</p>
-            <p>89%</p>
-        </div>
-        <div class="row">
-            <p>Temperature:</p>
-            <p id="temperature">Wide Awake</p>
-            <script>setColorTemperature("temperature", 0.89)</script>
-        </div>
-        <p></p>
-        <h>Connected lights:</h>
-        <div class="col">
-            <p>Philips Hue 1</p>
-            <p>Philips Hue 2</p>
-            <p>Red Light Filter Phone</p>
-            <p>Red Light Filter Laptop</p>
-        </div>
-    </div> -->
 </div>
 <menu/>
 
@@ -77,17 +77,34 @@
             $(".lp-s").text("Connected");
             $(".lp-s").toggleClass("connected-lp disconnected-lp");
             $("#lp-btn").text("Disconnect");
+            $(".res-server-lp").toggleClass("show hide");
             } else  {
                 $(".lp-s").text("Not Connected");
                 $(".lp-s").toggleClass("connected-lp disconnected-lp");
+                $(".res-server-lp").toggleClass("show hide");
                 $("#lp-btn").text("Connect");
             }
     });
 
-    setColorTemperature = (id, temperature) => {
-        let color = "rgb(" + (1-temperature * 255) + ",125," + temperature * 255 + ")"
-        document.getElementById(id).style.color = color
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value + '%';
+
+    slider.oninput = function() {
+        output.innerHTML = this.value + '%';
     }
 
+    var slider2 = document.getElementById("myRange2");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = slider2.value + '%';
+
+    slider2.oninput = function() {
+        output2.innerHTML = this.value + '%';
+    }
+
+    // setColorTemperature = (id, temperature) => {
+    //     let color = "rgb(" + (1-temperature * 255) + ",125," + temperature * 255 + ")"
+    //     document.getElementById(id).style.color = color
+    // }
 
 </script>
