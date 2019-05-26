@@ -1,4 +1,21 @@
+<style>
 
+.h1-header {
+
+    text-align: center;
+    padding-top: 30px;
+}
+
+.show {
+    text-align : center;
+}
+
+.show .h1-time {
+    font-size: 120px;
+}
+
+
+</style>
 <div class="row menu_page">
     <div class="col s12 m3"></div>
     <div class="col s12 m6">
@@ -7,11 +24,14 @@
             <div class="input-field">
                 <input type="text" id="time" class="timepicker">
                 <label for="time">Set time</label>
+                <h1 class="h1-header">Time set</h1>
+                <div class="show">
+                </div>
             </div>
         </form>
     </div>
-    <p id="test"></p>
-    <div class="col s12 m3"></div>
+    <div class="col s12 m3">   
+    </div>
 </div>
 <script>
     const timer = $(".timepicker");
@@ -28,7 +48,12 @@
         const now = new Date()
         now.setHours(time.M_Timepicker.hours)
         now.setMinutes(time.M_Timepicker.minutes)
-        API.post("settings/time",{new_time: now.getTime()})
+        // API.post("settings/time",{new_time: now.getTime()})
+
+        var set_time = $("#time").val();
+        var output = $(".show");
+        output.html("<h1 class= h1-time>" + set_time + "</h1>");
     })
+
 </script> 
 <menu/>
