@@ -5,13 +5,35 @@
         <h3>Time Picker</h3>
         <form>
             <div class="input-field">
-                <input type="text" id="time" class="timepicker">
+                <input type="text" id="time" class="timepicker" >
                 <label for="time">Set time</label>
             </div>
         </form>
     </div>
     <p id="test"></p>
     <div class="col s12 m3"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 <script>
     const timer = $(".timepicker");
@@ -25,10 +47,18 @@
         }
     });
     timer.on("change",function(e){
+        console.log("init js");
         const now = new Date()
         now.setHours(time.M_Timepicker.hours)
         now.setMinutes(time.M_Timepicker.minutes)
         API.post("settings/time",{new_time: now.getTime()})
-    })
+    });
+    $( "#time" ).change(function() {
+        console.log("time is set!");
+        // $('#exampleModal').modal('options'); 
+ 
+
+    });
+    
 </script> 
 <menu/>
