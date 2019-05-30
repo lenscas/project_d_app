@@ -1,17 +1,57 @@
+<style>
+.container {
+    text-align: center;
+}    
+.show-files-btn {
+    margin: 20px;
+    text-transform: lowercase ;
+}
+
+
+</style>
+
 <div class="row menu_page">
-    <div class="col" style="border-top: 1px solid black">
-        <div class="row" style="border-bottom: 1px solid black">
-            <p style="font-weight: bold; margin-left: 1.5vmin">File 1</p>
-            <p style="margin-left: 1.5vmin">mp3 audio file</p>
+    <div class="container">
+        <h2>Music Files</h2>         
+        <div class="show-content">
+            <button class="btn btn-primary show-files-btn">Show files</button>   
         </div>
-        <div class="row" style="border-bottom: 1px solid black">
-            <p style="font-weight: bold; margin-left: 1.5vmin">File 2</p>
-            <p style="margin-left: 1.5vmin">wav audio file</p>
+        <div class="showlist">
+             
         </div>
-        <div class="row" style="border-bottom: 1px solid black">
-            <p style="font-weight: bold; margin-left: 1.5vmin">File 3</p>
-            <p style="margin-left: 1.5vmin">png image file</p>
-        </div>
+        <form action="#">
+            Select a file: <input type="file" name="Muziek"><br><br>
+            <input type="submit">
+        </form>
     </div>
 </div>
 <menu/>
+<script>
+
+    pageController["library_screen"] = async function() {
+        const res = await API.get("audio/playlist");
+        const artist = res.currentSong.artist;
+        const path = res.currentSong.path;
+        const list_length = res.list.length;
+        var btntekst = $(".show-files-btn").text();
+
+        console.log(btntekst);
+
+        $(".show-files-btn").on("click", function() { 
+            
+            var btntekst = $(".show-files-btn").text();
+
+            if(btntekst == "Show files") {
+                $(".show-files-btn").text("Hide files");
+    
+                for(i = 1;  i <= list_length; i++) {
+                    $(".showlist").append("<ul><li>" + [i] + "." + path +"</li></ul>" );
+                }
+
+            } else  {
+                $(".show-files-btn").text("Show files");
+                $(".showlist").empty();
+            }
+        });
+    }
+</script>
