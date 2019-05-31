@@ -1,17 +1,132 @@
+<style>
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+form input[type = "radio"] {
+
+    opacity: unset !important;
+    position: initial !important;
+    margin: 5px;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+
+label {
+    font-size: inherit;
+    color: #000000;
+}
+
+
+</style>
 <div class = "row menu_page">
     <div class = "col" style="border-top: 1px solid black">
-            <div class = "row" style="border-bottom: 1px solid black">
-                <p style="font-weight: bold; margin-left: 1.5vmin">Setting</p>
-                <p style="margin-left: 1.5vmin">Description</p>
+            <div class = "row" style="border-bottom: 1px solid black; height: 90px" >
+                <div class="container">
+                    <p style="font-weight: bold; margin-left: 1.5vmin; margin-top: 15px">Push notifications</p>
+                    <form action="#">
+                        <label>On
+                        <input type="radio" name="notifications" value="on" checked>
+                        </label>
+                        <label>Off
+                        <input type="radio" name="notifications" value="off">
+                        </label>
+                    </form>
+                </div>
             </div>
-            <div class = "row" style="border-bottom: 1px solid black">
-                <p style="font-weight: bold; margin-left: 1.5vmin">Setting</p>
-                <p style="margin-left: 1.5vmin"">Description</p>
+            <div class = "row" style="border-bottom: 1px solid black; height: 90px">
+                <div class="container">
+                    <p style="font-weight: bold; margin-left: 1.5vmin; margin-top: 15px">Tips & Tricks</p>
+                    <form action="#">
+                        <label>On
+                        <input type="radio" name="tips" value="on" class="radio-input" checked>
+                        </label>
+                        <label>Off
+                        <input type="radio" name="tips" value="off" class="radio-input" >
+                        </label>
+                    </form>
+                </div>
             </div>
-            <div class = "row" style="border-bottom: 1px solid black">
-                <p style="font-weight: bold; margin-left: 1.5vmin">Setting</p>
-                <p style="margin-left: 1.5vmin"">Description</p>
+            <div class = "row" style="border-bottom: 1px solid black; height: 90px" >
+                <div class="container">
+                    <p style="font-weight: bold; margin-left: 1.5vmin; margin-top: 15px">Dark mode</p>
+                    <form action="#">
+                        <label>On
+                        <input type="radio" name="dark-mode" value="on" class="radio-input">
+                        </label>
+                        <label>Off
+                        <input type="radio" name="dark-mode" value="off" class="radio-input" checked>
+                        </label>
+                    </form>
+                </div>
             </div>
     </div>
 </div>
 <menu/>
+
+<script>
+
+$('input[type=radio][name=dark-mode]').change(function() {
+    if (this.value == 'on') {
+        $("body").css({
+            "background": "black",
+            "color": "white"
+        })
+
+        $(".row").css({
+            "border-bottom": "1px solid white"
+        })
+
+        $(".col-sm").css({
+            "border-top": "1px solid white"
+        })
+
+        $("label").css({
+            "color": "white"
+        })
+
+        $("input[type= text]").css({
+            "color": "white"
+        })
+        
+    }
+    else if (this.value == 'off') {
+        $("body").css({
+            "background": "#fff",
+            "color": "#212529"
+        })
+
+        $(".row").css({
+            "border-bottom": "1px solid black"
+        })
+
+        $(".col-sm").css({
+            "border-top": "1px solid black"
+        })
+
+        $("label").css({
+            "color": "#000000"
+        })
+
+        $("input[type= text]").css({
+            "color": "#000000"
+        })
+        
+    }
+});
+
+
+
+
+
+</script>

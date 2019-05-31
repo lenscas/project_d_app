@@ -33,11 +33,11 @@
     color: green;
 }
 
-.show {
+.show-lp {
     display: block;
 }
 
-.hide {
+.hide-lp {
     display: none;
 }
 
@@ -52,10 +52,10 @@ input[type=range] {
     <div class="container">
             <h1 class="cn-h1">Status</h1>
             <div class="main-tekst-lp">
-                <p><a href="#">Lights:</a> <span class="lp-s disconnected-lp">Not Connected</span></p>
+                <p>Lights: <span class="lp-s disconnected-lp">Not Connected</span></p>
                 <button class="btn btn-primary" id="lp-btn">Connect</button>
             </div>
-            <div class="res-server-lp hide">
+            <div class="res-server-lp hide-lp">
                 <h2>Connected lights:</h2>
                 <p><strong>Philips Hue 1</strong></p>
                 <p>Light Intensity: <span id="demo"></span></p>
@@ -77,11 +77,11 @@ input[type=range] {
             $(".lp-s").text("Connected");
             $(".lp-s").toggleClass("connected-lp disconnected-lp");
             $("#lp-btn").text("Disconnect");
-            $(".res-server-lp").toggleClass("show hide");
+            $(".res-server-lp").toggleClass("show-lp hide-lp");
             } else  {
                 $(".lp-s").text("Not Connected");
                 $(".lp-s").toggleClass("connected-lp disconnected-lp");
-                $(".res-server-lp").toggleClass("show hide");
+                $(".res-server-lp").toggleClass("show-lp hide-lp");
                 $("#lp-btn").text("Connect");
             }
     });
