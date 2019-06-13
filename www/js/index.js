@@ -21,7 +21,7 @@ var app = (function(){
     incCount = ()=>{
         done++
         if(done===2){
-            go_to("first_screen")
+            go_to("speaker")
         }
     }
     $(document).ready(function() {

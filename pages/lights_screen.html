@@ -60,10 +60,14 @@ input[type=range] {
                 <p><strong>Philips Hue 1</strong></p>
                 <p>Light Intensity: <span id="demo"></span></p>
                 <input type="range" min="0" max="100" value="75" class="slider" id="myRange">
+                <p>Blue light filter percentage: <span id="demo3"></span></p>
+                <input type="range" min="0" max="100" value="30" class="slider" id="myRange3">
                 <br>
                 <p><strong>Philips Hue 2</strong></p>
                 <p>Light Intensity: <span id="demo2"></span></p>
                 <input type="range" min="0" max="100" value="30" class="slider" id="myRange2">
+                <p>Blue light filter percentage: <span id="demo4"></span></p>
+                <input type="range" min="0" max="100" value="30" class="slider" id="myRange4">
             </div>     
     </div>
 </div>
@@ -100,6 +104,22 @@ input[type=range] {
 
     slider2.oninput = function() {
         output2.innerHTML = this.value + '%';
+    }
+
+    var slider3 = document.getElementById("myRange3");
+    var output3 = document.getElementById("demo3");
+    output3.innerHTML = slider3.value + '%';
+
+    slider3.oninput = function() {
+        output3.innerHTML = this.value + '%';
+    }
+
+    var slider4 = document.getElementById("myRange4");
+    var output4 = document.getElementById("demo4");
+    output4.innerHTML = slider4.value + '%';
+
+    slider4.oninput = function() {
+        output4.innerHTML = this.value + '%';
     }
 
     // setColorTemperature = (id, temperature) => {
