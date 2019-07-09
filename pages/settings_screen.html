@@ -27,7 +27,7 @@ label {
     color: #000000;
 }
 
-#Lamp-input-ip {
+#lamp-input-ip {
     text-align: center;
     border: 0.5px solid black;
     width: 20%;
@@ -79,7 +79,7 @@ label {
                     <div class="container">
                         <p style="font-weight: bold; margin-left: 1.5vmin; margin-top: 15px">Setting IP adress Lamp</p>
                         <form action="#" method="POST" target=".main-tekst-lp">
-                            <input id="Lamp-input-ip" type="text" name="IP-address"><br>
+                            <input id="lamp-input-ip" type="text" name="IP-address"><br>
                             <input type="submit">
                         </form>
                     </div>
@@ -112,6 +112,10 @@ $('input[type=radio][name=dark-mode]').change(function() {
         $("input[type= text]").css({
             "color": "white"
         })
+
+        $("#lamp-input-ip").css({
+            "border": "1px solid white"
+        })
         
     }
     else if (this.value == 'off') {
@@ -135,12 +139,12 @@ $('input[type=radio][name=dark-mode]').change(function() {
         $("input[type= text]").css({
             "color": "#000000"
         })
+
+        $("#lamp-input-ip").css({
+            "border": "1px solid black"
+        })
         
     }
 });
-
-
-
-
 
 </script>
