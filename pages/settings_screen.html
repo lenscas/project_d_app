@@ -34,6 +34,9 @@ label {
 }
 
 </style>
+<div style="display: none" class="alert alert-success" id="ip-sv-message">
+    Het address is opgeslagen
+</div>
 <div class = "row menu_page">
     <div class = "col" style="border-top: 1px solid black">
             <div class = "row" style="border-bottom: 1px solid black; height: 90px" >
@@ -78,9 +81,9 @@ label {
             <div class = "row" style="border-bottom: 1px solid black; height: 170px" >
                     <div class="container">
                         <p style="font-weight: bold; margin-left: 1.5vmin; margin-top: 15px">Setting IP adress Lamp</p>
-                        <form action="#" method="POST" target=".main-tekst-lp">
-                            <input id="lamp-input-ip" type="text" name="IP-address"><br>
-                            <input type="submit">
+                         <form id="lampIpForm">
+                            <input id="lamp-input-ip" type="text" name="ipaddress" class="ipaddress"><br>
+                            <input type="submit" class="ipbtn">
                         </form>
                     </div>
             </div>
@@ -146,5 +149,14 @@ $('input[type=radio][name=dark-mode]').change(function() {
         
     }
 });
+
+const ipbtn = $("#lampIpForm");
+
+ipbtn.on("submit",async function(e){
+    e.preventDefault()
+    var ip_address = $(".ipaddress").val();
+    await API.post("ipaddress",{ipaddress: ip_address})
+    $("#ip-sv-message").show()
+})
 
 </script>
