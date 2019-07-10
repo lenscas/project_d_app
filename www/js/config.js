@@ -1,3 +1,3 @@
 config = {
-	speaker_url : "http://192.168.56.11:3000"
+	speaker_url : "http://127.0.0.1:3000"
 }

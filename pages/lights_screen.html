@@ -57,17 +57,23 @@ input[type=range] {
             </div>
             <div class="res-server-lp hide-lp">
                 <h2>Connected lights:</h2>
-                <p><strong>Philips Hue 1</strong></p>
+                <p><strong>Lamp 1</strong></p>
+                <p>Lamp color: <input type="color" name="lampcolor" value="#ffffff" list="colors"></p>
+                <datalist id="colors">
+                    <option>#ffffff/option>
+                    <option>#ff0000</option>
+                    <option>#0000ff</option>
+                    <option>#00ff00</option>
+                    <option>#ffff00</option>
+                    <option>#00ffff</option>
+                </datalist>
                 <p>Light Intensity: <span id="demo"></span></p>
                 <input type="range" min="0" max="100" value="75" class="slider" id="myRange">
-                <p>Blue light filter percentage: <span id="demo3"></span></p>
-                <input type="range" min="0" max="100" value="30" class="slider" id="myRange3">
                 <br>
-                <p><strong>Philips Hue 2</strong></p>
+                <!-- <p><strong>Lamp 2</strong></p>
                 <p>Light Intensity: <span id="demo2"></span></p>
-                <input type="range" min="0" max="100" value="30" class="slider" id="myRange2">
-                <p>Blue light filter percentage: <span id="demo4"></span></p>
-                <input type="range" min="0" max="100" value="30" class="slider" id="myRange4">
+                <p>Lamp color: <input type="color" name="lampcolor" value="#ffffff"></p>
+                <input type="range" min="0" max="100" value="30" class="slider" id="myRange2"> -->
             </div>     
     </div>
 </div>
